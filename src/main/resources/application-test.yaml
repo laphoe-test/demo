@@ -1,3 +1,3 @@
 spring:
   datasource:
-    data: classpath:postcode-test.sql
+    data: classpath:test-postcode.sql
