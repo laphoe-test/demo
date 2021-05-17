@@ -1,15 +1,17 @@
 package com.example.demo.dto;
 
-import java.math.BigDecimal;
+import java.io.Serializable;
 
-public class DistanceDto {
+public class DistanceDto implements Serializable {
+    public final static DistanceDtoBuilder builder = new DistanceDtoBuilder();
+
     String unit;
 
-    BigDecimal distance;
+    Double distance;
 
-    Location target;
+    LocationDto target;
 
-    Location destination;
+    LocationDto destination;
 
     public String getUnit() {
         return unit;
@@ -19,33 +21,67 @@ public class DistanceDto {
         this.unit = unit;
     }
 
-    public BigDecimal getDistance() {
+    public Double getDistance() {
         return distance;
     }
 
-    public void setDistance(BigDecimal distance) {
+    public void setDistance(Double distance) {
         this.distance = distance;
     }
 
-    public Location getTarget() {
+    public LocationDto getTarget() {
         return target;
     }
 
-    public void setTarget(Location target) {
+    public void setTarget(LocationDto target) {
         this.target = target;
     }
 
-    public Location getDestination() {
+    public LocationDto getDestination() {
         return destination;
     }
 
-    public void setDestination(Location destination) {
+    public void setDestination(LocationDto destination) {
         this.destination = destination;
     }
-}
 
-class Location{
-    String longitute;
+    public static class DistanceDtoBuilder {
+        String unit;
 
-    String latitute;
+        Double distance;
+
+        LocationDto target;
+
+        LocationDto destination;
+
+        public DistanceDtoBuilder setUnit(String unit) {
+            this.unit = unit;
+            return this;
+        }
+
+        public DistanceDtoBuilder setDistance(Double distance) {
+            this.distance = distance;
+            return this;
+        }
+
+        public DistanceDtoBuilder setTarget(LocationDto target) {
+            this.target = target;
+            return this;
+        }
+
+        public DistanceDtoBuilder setDestination(LocationDto destination) {
+            this.destination = destination;
+            return this;
+        }
+
+        public DistanceDto build(){
+            DistanceDto dto = new DistanceDto();
+            dto.setUnit(unit);
+            dto.setDestination(destination);
+            dto.setTarget(target);
+            dto.setDistance(distance);
+            return dto;
+        }
+    }
+
 }

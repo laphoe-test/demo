@@ -1,0 +1,2 @@
+INSERT INTO postcodelatlng (id,postcode,latitude,longitude) VALUES (1, 'AB10 1XG', '57.144165','-2.114848');
+INSERT INTO postcodelatlng (id,postcode,latitude,longitude) VALUES (2, 'AB10 6RN', '57.137880','-2.121487');
