@@ -15,3 +15,15 @@ spring:
   h2:
     console:
       enabled: true
+
+  security:
+    user:
+      name: user
+      password: password
+
+jwt:
+  secret: demo
+
+data:
+  user: user
+  password: $2a$10$.CFEYQi2DOcHMcgFYEKtvOAy2A.Na3fDTLZaTB6itt9Dpvx4NZ6Se
